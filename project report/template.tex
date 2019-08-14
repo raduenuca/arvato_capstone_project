@@ -1,0 +1,79 @@
+\documentclass{article}
+
+
+\usepackage{arxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{longtable}      % very long table
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage[citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\usepackage{graphicx}       % images
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{subfiles}
+\usepackage{float}
+\graphicspath{ {images/} }
+\addbibresource{references.bib}
+
+\title{Create a Customer Segmentation Report for Arvato Financial Services}
+
+
+\author{
+  Radu L.~Enuca \\
+  %% Department of Computer Science\\
+  %% Cranberry-Lemon University\\
+  Bucharest, Romania \\
+  \texttt{https://github.com/raduenuca} \\
+  \texttt{https://www.linkedin.com/in/raduenuca}
+  %% examples of more authors
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+In this project, we analyze demographic data for customers of a mail-order sales company \footnote{The data is the property of Bertelsmann Arvato Analytics and represents a real-life data science task.} in Germany, comparing it against demographics information for the general population. EDA \footnote{Exploratory Data Analysis} is performed to understand and clean the data. Unsupervised learning techniques are used to perform customer segmentation, identifying the parts of the population that best describe the core customer base of the company. Then, we'll apply what we've learned on a third dataset with demographic information for targets of a marketing campaign for the company, and use a model to predict which individuals are most likely to convert into becoming customers for the company.
+\end{abstract}
+
+% keywords can be removed
+\keywords{Exploratory Data Analysis \and Unsupervised Learning \and Supervised Learning}
+
+\subfile{sections/1.definition}
+
+\subfile{sections/2.analysis}
+
+\subfile{sections/3.methodology}
+
+\subfile{sections/4.results}
+
+\subfile{sections/5.conclusion}
+
+\printbibliography
+
+\subfile{sections/6.annex}
+
+\end{document}

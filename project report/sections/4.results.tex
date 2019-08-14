@@ -1,0 +1,53 @@
+\section{Results}
+
+\subsection{Model Evaluation and Validation}
+
+We obtain the following results (in bold the best results for each case):
+
+\mbox{}%<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+\begin{longtable}{llll}
+\toprule
+ Resampling/Algorithm & Logistic Regression & Voting Classifier & Tuned XGBoostClassifier \\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{{Continued on next page}} \\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+    No resampling & 0.5 & 0.5 & N/A \\
+    SMOTE & 0.6564 & 0.9357 & N/A \\
+    ADASYN & 0.6584 & \textbf{0.9365} & N/A \\
+    ClusterCentroids & \textbf{0.6955} & 0.8785 & N/A \\
+    TomekLinks & 0.5 & 0.5 & N/A \\
+    SMOTETomek & 0.6564 & 0.9357 & \textbf{0.9467} \\
+\caption{Predictions for the validation set}
+\label{tab:validation} \\
+\end{longtable}
+
+The VotingClassifier uses the following classifiers with default parameters:
+\begin{itemize}
+    \item SVC  - C-Support Vector Classification
+    \item MLPClassifier - Multi-layer Perceptron classifier.
+    \item KNeighborsClassifier - Classifier implementing the k-nearest neighbors vote.
+    \item RandomForestClassifier - A random forest classifier
+\end{itemize}
+
+The tuned XGBoostClassifier has the following parameters after the Bayesian search:
+
+\begin{tabular}{ll}
+colsample\_bytree & 0.75 \\
+eta & 0.25 \\
+gamma & 0.5 \\
+max\_depth & 8 \\
+min\_child\_weight & 1.0 \\
+n\_estimators & 673.0 \\
+subsample & 0.8 \\
+\end{tabular}
+
+\subsection{Justification}
+
+The final tuned XGBoostClassifier performs better not only on the validation set but also on the test set held for the Kaggle competition. Although the difference between the final model and the VotingClassifier with default parameters is small on the validation dataset, the VotingClassifier gets a result under 0.5 (or worse than random guessing) on the Kaggle competition.
